@@ -6,6 +6,11 @@ body {
   overflow: hidden;
 }
 
+@font-face {
+  font-family: Aniron;
+  src: url(Aniron-7BaP.ttf);
+}
+
 body {
   background-image: url("Shire_Background.jpg");
   background-repeat: no-repeat;
@@ -13,4 +18,12 @@ body {
   background-position: center;
 
   color: aliceblue;
+}
+
+h1 {
+  font-family: Aniron;
+}
+
+#Welcome {
+  text-align: center;
 }
