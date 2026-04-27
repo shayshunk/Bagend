@@ -1,31 +1,40 @@
-html,
-body {
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  overflow: hidden;
-}
-
 @font-face {
   font-family: Aniron;
   src: url(Aniron-7BaP.ttf);
 }
 
-/* Background image — stays fixed behind everything */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-y: auto; /* Changed to auto to allow native scrolling */
+  /* height: 100vh; REMOVED */
+}
+
 .bg-image {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  min-height: 100vh; /* Changed to min-height so it expands if content is taller */
   background-image: url("Shire_Background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   z-index: -1;
-
   filter: blur(0px);
   transform: scale(1.01);
+}
+
+.main-container {
+  min-height: 100vh; /* Allows it to fill the screen initially, but grow if content exceeds it */
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  align-content: flex-start;
+  height: auto; /* Let content dictate height */
+  padding-top: 15vh;
 }
 
 h1 {
@@ -34,17 +43,6 @@ h1 {
 
 h2 {
   font-family: Aniron;
-}
-
-.main-container {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  align-content: flex-start;
-
-  height: 100vh;
-  padding-top: 15vh;
 }
 
 #Welcome {
@@ -106,7 +104,7 @@ h2 {
 @media (max-width: 768px) {
   html,
   body {
-    overflow: auto;
+    overflow-y: auto;
     height: auto;
   }
 
